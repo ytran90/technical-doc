@@ -1,0 +1,210 @@
+div{
+  display: block;
+}
+
+body{
+  font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #304455;
+  background-color: #fff;
+  margin: 0;
+}
+
+p{
+  line-height: 1.6em;
+  margin: 1.2em 0 -1.2em;
+  padding-bottom: 1.2em;
+  position: relative;
+  z-index: 1;
+}
+
+a{
+  text-decoration: none;
+  color: #304455;
+}
+
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+section{
+  margin-top: 3em;
+}
+
+p > a{
+  text-decoration: none;
+  color: #42b983;
+  font-weight: 600;
+}
+
+pre code {
+    overflow-x: auto;
+    color: #525252;
+    white-space: pre;
+    padding: 1.2em 1.4em;
+    font-size: 0.85rem;
+    line-height: 1.6rem;
+    display: block;
+    background: #f8f8f8;
+}
+
+code {
+    color: #d63200;
+    padding: 3px 5px;
+    margin: 0 2px;
+    border-radius: 2px;
+    white-space: nowrap;
+    background: #f8f8f8;
+}
+
+
+/* ====== Nav Bar ===== */
+
+.sidebar{
+  z-index: 10;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: fixed;
+  background-color: #eee; /* Grey background color */
+  width: 260px;
+  padding: 35px 0px 60px 20px;
+  height: 100%;
+}
+
+.nav-link {
+  display: block; /* Make the links appear below each other */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.nav-link a:hover {
+  color: #42b983; /* green text on mouse-over */
+  font-weight: 600;
+}
+
+.nav-link a:active {
+  color: #42b983; /* Add a green color to the "active/current" link */
+  font-weight: 600;
+}
+
+/* ====== Main Content ===== */
+
+.content{
+position: relative;
+padding: 35px 0;
+max-width: 700px;
+margin: 0 auto;
+padding-left: 50px;
+}
+
+.vue-mastery {
+    background-color: #e7ecf3;
+    padding: 1em 1.25em;
+    border-radius: 2px;
+    color: #486491;
+    position: relative;
+    margin-top: 1em;
+}
+
+.vue-mastery a {
+    color: #486491;
+    position: relative;
+    padding-left: 36px;
+    font-weight: 600;
+}
+
+.vue-mastery a:before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 30px;
+    height: 30px;
+    top: -5px;
+    left: -4px;
+    border-radius: 50%;
+    background-color: #73abfe;
+}
+
+.vue-mastery a:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    top: 5px;
+    left: 8px;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 8px solid #fff;
+}
+
+.content p.tip {
+    padding: 12px 24px 12px 30px;
+    margin: 2em 0;
+    background-color: #f8f8f8;
+    position: relative;
+    border-left:4px solid #f66;
+    border-radius: 2px;
+}
+
+.content p.tip:before {
+  content: '!';
+  position: absolute;
+  display: block;
+  width: 25px;
+  height: 25px;
+  left: -2.1%;
+  border-radius: 50%;
+  background-color: #f66;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+
+.htmltag:before {
+  content: "HTML";
+  position: absolute;
+  right: 0;
+  color: #ccc;
+  text-align: right;
+  font-size: 0.9em;
+  padding: 5px 10px 0;
+  line-height: 15px;
+  height: 15px;
+  font-weight: 600;
+}
+
+.jstag:before {
+  content: "JS";
+  position: absolute;
+  right: 0;
+  color: #ccc;
+  text-align: right;
+  font-size: 0.9em;
+  padding: 5px 10px 0;
+  line-height: 15px;
+  height: 15px;
+  font-weight: 600;
+}
+
+.demo {
+    border: 1px solid #eee;
+    border-radius: 2px;
+    padding: 25px 35px;
+    margin-top: 1em;
+    margin-bottom: 40px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    overflow-x: auto;
+  }

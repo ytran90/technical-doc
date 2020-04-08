@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="techdoc.css">
+    <title> VUE.js Introduction </title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:500&amp;text=Vue.js&amp;display=swap" rel="stylesheet">
+  </head>
+  <body>
+  <!-- Navigation Bar -->
+  <div class="sidebar">
+    <nav id="navbar">
+  <a class="nav-link" href="#What_is_Vue.js">What is Vue.js?</a>
+  <a class="nav-link" href="#Getting_Started">Getting Started</a>
+  <a class="nav-link" href="#Declarative_Rendering">Declarative Rendering</a>
+  <a class="nav-link" href="#">Menu 4</a>
+  <a class="nav-link" href="#">Menu 5</a>
+    </nav>
+  </div>
+    <!-- Document details -->
+  <div class="content">
+    <main id="main-doc">
+      <h1> VUE.js Introduction </h1>
+      <section id="" class="main-section">
+        <header id="What_is_Vue.js"><a href="#What-is-Vue-js"><h2>What is Vue.js?<h2></a></header><hr></hr>
+        <p> Vue (pronounced /vjuː/, like <b>view</b>) is a <b>progressive framework</b> for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. The core library is focused on the view layer only, and is easy to pick up and integrate with other libraries or existing projects. On the other hand, Vue is also perfectly capable of powering sophisticated Single-Page Applications when used in combination with modern tooling and supporting libraries.</p>
+        <p>If you’d like to learn more about Vue before diving in, we created a video walking through the core principles and a sample project.</p>
+        <p>If you are an experienced frontend developer and want to know how Vue compares to other libraries/frameworks, check out the Comparison with Other Frameworks.</p>
+        <div class="vue-mastery"><a href="https://www.vuemastery.com/courses/intro-to-vue-js/vue-instance/" target="_blank" rel="sponsored noopener" title="Free Vue.js Course">Watch a free video course on Vue Mastery</a></div>
+      </section>
+      <section id="" class="main-section">
+        <header id="Getting_Started"><a href="#Getting_Started"><h2>Getting Started<h2></a></header><hr></hr>
+        <p class="tip">The official guide assumes intermediate level knowledge of HTML, CSS, and JavaScript. If you are totally new to frontend development, it might not be the best idea to jump right into a framework as your first step - grasp the basics then come back! Prior experience with other frameworks helps, but is not required.</p>
+        <p> The easiest way to try out Vue.js is using the <a href="https://codesandbox.io/s/github/vuejs/vuejs.org/tree/master/src/v2/examples/vue-20-hello-world" target="_blank" rel="noopener">Hello World example</a>. Feel free to open it in another tab and follow along as we go through some basic examples. Or, you can <a href="https://github.com/vuejs/vuejs.org/blob/master/src/v2/examples/vue-20-hello-world/index.html" target="_blank" download="index.html" rel="noopener noreferrer">create an <code>index.html</code></a> file and include Vue with:</p>
+        <pre><code class="htmltag">&lt;!-- development version, includes helpful console warnings --&gt;</br>&lt;script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"&gt;&lt;/script&gt;</code></pre>
+        <p>or:</p>
+        <pre><code class="htmltag">&lt;!-- production version, optimized for size and speed --&gt;</br>&lt;script src="https://cdn.jsdelivr.net/npm/vue"&gt;&lt;/script&gt;</code></pre>
+        <p>The <a href="installation.html">Installation</a> page provides more options of installing Vue. Note: We <strong>do not</strong> recommend that beginners start with <code>vue-cli</code>, especially if you are not yet familiar with Node.js-based build tools.</p>
+        <p>If you prefer something more interactive, you can also check out <a href="https://scrimba.com/g/gvuedocs" target="_blank" rel="noopener">this tutorial series on Scrimba</a>, which gives you a mix of screencast and code playground that you can pause and play around with anytime.</p>
+      </section>
+      <section id="" class="main-section">
+        <header id="Declarative_Rendering"><a href="#Declarative_Rendering"><h2>Declarative Rendering<h2></a></header><hr></hr>
+          <div class="vue-mastery"><a href="https://scrimba.com/p/pXKqta/cQ3QVcr" target="_blank" rel="noopener noreferrer">Try this lesson on Scrimba</a></div>
+          <p>At the core of Vue.js is a system that enables us to declaratively render data to the DOM using straightforward template syntax:</p>
+          <pre><code class="htmltag">&lt;div id="app"&gt;
+  {{ message }}
+&lt;/div&gt;</code></pre>
+          <pre><code class="jstag">var app = new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue!'
+  }
+})
+</code></pre>
+      <div class="demo"> Hello Vue!</div>
+      <p>We have already created our very first Vue app! This looks pretty similar to rendering a string template, but Vue has done a lot of work under the hood. The data and the DOM are now linked, and everything is now <strong>reactive</strong>. How do we know? Open your browser’s JavaScript console (right now, on this page) and set <code>app.message</code> to a different value. You should see the rendered example above update accordingly.</p>
+      <p>Note that we no longer have to interact with the HTML directly. A Vue app attaches itself to a single DOM element (<code>#app</code> in our case) then fully controls it. The HTML is our entry point, but everything else happens within the newly created Vue instance.</p>
+      <p>In addition to text interpolation, we can also bind element attributes like this:</p>
+      <pre><code class="htmltag">&lt;div id="app-2"&gt;
+&lt;span v-bind:title="message"&gt;
+    Hover your mouse over me for a few seconds
+    to see my dynamically bound title!
+&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+      <pre><code class="jstag">var app2 = new Vue({
+  el: '#app-2',
+  data: {
+    message: 'You loaded this page on ' + new Date().toLocaleString()
+  }
+})
+</code></pre>
+      <p>Here we are encountering something new. The <code>v-bind</code> attribute you are seeing is called a <strong>directive</strong>. Directives are prefixed with <code>v-</code> to indicate that they are special attributes provided by Vue, and as you may have guessed, they apply special reactive behavior to the rendered DOM. Here, it is basically saying “keep this element’s <code>title</code> attribute up-to-date with the <code>message</code> property on the Vue instance.”</p>
+      <p>If you open up your JavaScript console again and enter <code>app2.message = 'some new message'</code>, you’ll once again see that the bound HTML - in this case the <code>title</code> attribute - has been updated.</p>
+      </section>
+      <section id="" class="main-section">
+        <header id=""></header>
+      </section>
+      <section id="" class="main-section">
+        <header id=""></header>
+      </section>
+    </main>
+  </div>
+
+  </body>
+</html>
